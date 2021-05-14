@@ -60,17 +60,18 @@ func Logger(){
 
     // 文件输出配置
     fileConfig := &go_logger.FileConfig {
-		Filename : "./test.log", // 日志输出文件名，不自动存在
+		//Filename : "./log/test.log", // 日志输出文件名，不自动存在
 		
 		/** 如果要将单独的日志分离为文件
 		 * 请配置LealFrimeNem参数
 		 */
         LevelFileName : map[int]string {
-            l.LoggerLevel("error"): "./error.log",    // Error 级别日志被写入 error .log 文件
-			l.LoggerLevel("warning"): "./warning.log",// Warn 级别日志被写入到 Warn.log 文件中
-			//l.LoggerLevel("notice"): "./notice.log",// Warn 级别日志被写入到 Warn.log 文件中
-			l.LoggerLevel("info"): "./info.log",      // Info 级别日志被写入到 info.log 文件中
-            l.LoggerLevel("debug"): "./debug.log",    // Debug 级别日志被写入到 debug.log 文件中
+            l.LoggerLevel("error"): "./log/error.log",    // Error 级别日志被写入 error .log 文件
+			l.LoggerLevel("warning"): "./log/warning.log",// Warn 级别日志被写入到 Warn.log 文件中
+			l.LoggerLevel("notice"): "./log/notice.log",// Warn 级别日志被写入到 Warn.log 文件中
+			l.LoggerLevel("info"): "./log/info.log",      // Info 级别日志被写入到 info.log 文件中
+			
+			//l.LoggerLevel("debug"): "./log/debug.log",    // Debug 级别日志被写入到 debug.log 文件中
 		},
 		
         MaxSize : 1024 * 1024,  // 文件最大值（KB），默认值0不限
